@@ -242,3 +242,13 @@ const getComponent => (location, cb) {
 
 核心方法就是`require.ensure(dependencies, callback, chunkName)`，会将组件单独打包，只有跳转这个路由时，才会加载这个文件内容。
 
+## Gzip压缩
+
+Http压缩是指网页服务器和客户端之间传输的数据进行压缩，改进传输速度和带宽。开启方式是在headers中加上：
+
+```
+accept-encoding:gzip
+```
+
+开启Gzip，虽然压缩和解压需要时间，但如果文件很大，还是很有效。Gzip的压缩原理是替换文件中的重复内容，随意重复越多，压缩效果越好。
+
